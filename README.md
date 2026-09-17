@@ -2,7 +2,7 @@
 
 Recall candidate movies with Cypher (shared actors/directors on the Neo4j Movie sample graph), then rerank the whole shortlist in one call to [Jev](https://typesafe.ai), TypeSafe's typed decision model. No generated prose, no per-candidate API calls.
 
-Full walkthrough: [link to blog post]
+Full walkthrough: [blog post link, once published]
 
 ## Requirements
 
@@ -13,7 +13,7 @@ Full walkthrough: [link to blog post]
 
 ```bash
 git clone <this-repo-url>
-cd movie-rerank-demo
+cd jev-movie-rerank-demo
 pip install -r requirements.txt
 cp .env.example .env   # fill in your Aura and TypeSafe credentials
 python rerank.py
