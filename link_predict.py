@@ -177,6 +177,10 @@ def run():
 
     jev_body, ground_truth = build_jev_request(top_genres, positives, negatives)
     jev_response = call_jev(jev_body)
+    import json
+    print("--- RAW JEV RESPONSE (debug) ---")
+    print(json.dumps(jev_response, indent=2))
+    print("--- END RAW RESPONSE ---\n")
     answers = jev_response.get("answers", {})
 
     correct = 0
