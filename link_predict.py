@@ -177,10 +177,6 @@ def run():
 
     jev_body, ground_truth = build_jev_request(top_genres, positives, negatives)
     jev_response = call_jev(jev_body)
-    import json
-    print("--- RAW JEV RESPONSE (debug) ---")
-    print(json.dumps(jev_response, indent=2))
-    print("--- END RAW RESPONSE ---\n")
     answers = jev_response.get("answers", {})
 
     correct = 0
@@ -189,7 +185,7 @@ def run():
     print("-" * 90)
     for qid, truth in ground_truth.items():
         ans = answers.get(qid, {})
-        probability = ans.get("probability")
+        probability = ans.get("noul")
         predicted = probability is not None and probability >= 0.5
         is_correct = predicted == truth["expected"]
         correct += int(is_correct)
